@@ -6,7 +6,7 @@ const createWindow = () => {
     height: 600
   })
 
-  win.loadFile('index.html')
+  win.loadURL('https://github.com')
 }
 
 app.whenReady().then(() => {
