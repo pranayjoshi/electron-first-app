@@ -1,4 +1,4 @@
-import { contextBridge, ipcRenderer } from 'electron/renderer'
+const { contextBridge, ipcRenderer } = require('electron/renderer')
 
 contextBridge.exposeInMainWorld('electronAPI', {
   cancelBluetoothRequest: () => ipcRenderer.send('cancel-bluetooth-request'),

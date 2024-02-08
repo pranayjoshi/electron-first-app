@@ -1,5 +1,5 @@
-import { app, BrowserWindow, ipcMain } from 'electron/main'
-import { join } from 'node:path'
+const { app, BrowserWindow, ipcMain } = require('electron/main')
+const path = require('node:path')
 
 let bluetoothPinCallback
 let selectBluetoothCallback
@@ -9,7 +9,7 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js')
     }
   })
 
