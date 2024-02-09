@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Web Bluetooth API</title>
+    <link href="output.css" rel="stylesheet">
   </head>
-  <body>
-    <h1>Web Bluetooth API</h1>
+  <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen py-2">
+    <h1 class="text-3xl font-bold text-blue-700 mb-4">Web Bluetooth API</h1>
 
-    <button id="clickme">Test Bluetooth</button>
+    <div class="flex gap-4">
+      <button id="clickme" class="bg-blue-600 hover:bg-blue-700 text-white rounded px-4 py-2">Test Bluetooth</button>
+      <button id="cancel" class="bg-red-600 hover:bg-red-700 text-white rounded px-4 py-2">Cancel Bluetooth Request</button>
+    </div>
 
-    <p>Currently selected bluetooth device: <strong id="device-name""></strong></p>
+    <p class="mt-4 text-lg text-gray-700">Currently selected bluetooth device: <strong id="device-name" class="font-bold"></strong></p>
 
     <script src="./renderer.js"></script>
   </body>
