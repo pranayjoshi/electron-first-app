@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, dialog} = require('electron')
 const path = require('path')
 
 function createWindow () {
@@ -9,9 +9,20 @@ function createWindow () {
 
   mainWindow.webContents.on('select-bluetooth-device', (event, deviceList, callback) => {
     event.preventDefault()
+  
     if (deviceList && deviceList.length > 0) {
-      callback(deviceList[0].deviceId)
-    } 
+      const deviceNames = deviceList.map(device => device.deviceName)
+  
+      dialog.showMessageBox({
+        message: 'Select a Bluetooth device:',
+        buttons: deviceNames
+      }).then(result => {
+        const selectedDevice = deviceList[result.response]
+        if (selectedDevice) {
+          callback(selectedDevice.deviceId)
+        }
+      })
+    }
   })
 
   mainWindow.loadFile('index.html')
