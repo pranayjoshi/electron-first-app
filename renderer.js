@@ -12,4 +12,5 @@ async function connectRandom () {
   document.getElementById('device-name').innerHTML = device.name || `ID: ${device.id}`
 }
 
-document.getElementById('clickme').addEventListener('click', testIt)
+document.getElementById('clickme').addEventListener('click', connectDevice)
+document.getElementById('clickme-random').addEventListener('click', connectRandom)

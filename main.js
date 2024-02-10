@@ -11,13 +11,11 @@ function createWindow () {
     event.preventDefault()
     if (deviceList && deviceList.length > 0) {
       for (const device of deviceList) {
-        if (device.deviceName === 'Pranay’s iPhone') {
           callback(device.deviceId)
-          return
-        }
       }
     } 
   })
+  mainWindow
 
   mainWindow.loadFile('index.html')
 

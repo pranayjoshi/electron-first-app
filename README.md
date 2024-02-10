@@ -4,9 +4,8 @@ This is a basic Electron application with Web Bluetooth integration. The applica
 
 ## Features
 
-- Scan for available Bluetooth devices
-- Connect to a Bluetooth device
-- Send and receive data from connected Bluetooth device
+- Connect to a Bluetooth device of your choice
+- Connect to a random Bluetooth device
 
 ## Screenshots
 
