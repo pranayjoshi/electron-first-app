@@ -1,6 +1,6 @@
 async function testIt () {
   const device = await navigator.bluetooth.requestDevice({
-    acceptAllDevices: true
+    filters: [{ name: 'Pranay’s iPhone' }]
   })
   document.getElementById('device-name').innerHTML = device.name || `ID: ${device.id}`
 }
