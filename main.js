@@ -1,4 +1,4 @@
-const {app, BrowserWindow,} = require('electron')
+const {app, BrowserWindow} = require('electron')
 const path = require('path')
 
 function createWindow () {
@@ -10,13 +10,17 @@ function createWindow () {
   mainWindow.webContents.on('select-bluetooth-device', (event, deviceList, callback) => {
     event.preventDefault()
     if (deviceList && deviceList.length > 0) {
-      for (i in deviceList) {
-        callback(deviceList[i].deviceId)
+      for (const device of deviceList) {
+        if (device.deviceName === 'Pranay’s iPhone') {
+          callback(device.deviceId)
+          return
+        }
       }
     } 
   })
 
-mainWindow.loadFile('index.html')
+  mainWindow.loadFile('index.html')
+
 }
 
 app.whenReady().then(() => {
